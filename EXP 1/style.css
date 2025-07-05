@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f0f0f0;
+}
+
+#Card {
+    width: 350px;
+    height: auto;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+#Top {
+    height: 120px;
+    background-color: rgba(0, 115, 255, 0.9);
+    position: relative;
+}
+
+#photo {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid white;
+    background-image: url("./photo.jpg");
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+#Bottom {
+    margin-top: 80px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+#Bottom h2 {
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+#Bottom p {
+    margin-bottom: 15px;
+    color: gray;
+}
+
+#Media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#Media .icon {
+    width: 40px;
+    height: 40px;
+    background: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #333;
+    transition: background 0.3s;
+}
+
+#Media .icon:hover {
+    background: rgba(0, 115, 255, 0.1);
+    color: rgba(0, 115, 255, 1);
+}
+
+#Extra {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#Extra button {
+    padding: 10px 20px;
+    border: none;
+    background-color: rgba(0, 115, 255, 0.9);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#Extra button:hover {
+    background-color: rgba(0, 115, 255, 1);
+}
+
+#Extra\ Info {
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    color: gray;
+    padding-bottom: 10px;
+}
