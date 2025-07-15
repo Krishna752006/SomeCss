@@ -107,40 +107,40 @@ a{
 }
 
 .box {
-    background-color: #232323;
-    border-radius: 0.75rem;
-    height: 8rem;
-    padding: 1rem 1.25rem;
-    margin: 0.5rem 0 0.5rem 0;
+  background-color: #232323;
+  border-radius: 0.75rem;
+  height: 8rem;
+  padding: 1rem 1.25rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .box-p1 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
 .box-p2 {
-    font-size: 0.75rem;
-    opacity: 0.9;
-    margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  opacity: 0.9;
+  margin-bottom: 1.25rem;
 }
 
 .badge {
-    background-color: #fff;
-    border: none;
-    border-radius: 100px;
-    padding: 0.25rem 1rem;
-    font-weight: 700;
-    margin-top: 0.5rem;
-    height: 2rem;
-    width: fit-content;
-    cursor: pointer;
-    color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 0.25rem 1rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  height: 2rem;
+  width: fit-content;
+  cursor: pointer;
+  color: #000;
 }
 
 .badge:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .dark-badge{
