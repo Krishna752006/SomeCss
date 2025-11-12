@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type = "text" id = 'Inp' placeholder="Enter Task to Do!">
+    <button id = 'but'>Enter</button>
+    <div><ul id = 'add'>
+    </ul></div>
+    <script>
+        const inp = document.getElementById('Inp');
+const but = document.getElementById('but');
+const add = document.getElementById('add');
+
+but.addEventListener('click',()=>{
+    const a = inp.value;
+    if(a!=="")
+    {
+        inp.value = "";
+        const k = document.createElement('li');
+        k.innerText = a;
+        const del = document.createElement('button');
+        del.innerText = "Delete";
+        k.append(del);
+        add.append(k);
+    }
+})
+add.addEventListener('click',(event)=>{
+    const a = event.target;
+    if(a.nodeName === 'BUTTON')
+    {
+        a.parentElement.remove();
+    }
+    else{
+        a.style.textDecoration = a.style.textDecoration === "line-through" ? "none" : "line-through";
+    }
+})
+    </script>
+</body>
+</html>
