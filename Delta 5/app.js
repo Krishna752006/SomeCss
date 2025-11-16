@@ -1,52 +1,64 @@
 const box = document.getElementById("box");
+const abc = document.getElementById("abc");
+
 let color = ['red','green','yellow','blue'];
 let wow = [];
-let i = 0,score = 0, k = 0;
-
-const abc = document.getElementById('abc');
+let level = 0;
+let i = 0;
+let score = 0;
+let pow = true;
 
 box.addEventListener('click',(event)=>{
-    if(event.target.id !== 'box')
-    {
-        let a = event.target;
-        a.style.backgroundColor = 'transparent';
-        setTimeout(() => {
-            a.style.backgroundColor = '';
-        }, 100);
-        setTimeout(() => {
-            if(a.id === wow[k] && k === i-1)
-            {
-                abc.innerText = `Level ${++i}`;
-                k = 0;
-                score++;
-                n();
-            }
-            else if(a.id === wow[k] && k !== i) k++;
-            else
-            {
-                abc.innerText = `Failed! Final Score = ${score}`;
-                box.style.pointerEvents = "none";
-            }
-        }, 100);
-    }
-})
+    if(event.target.id === 'box') return;
+    
+    let a = event.target;
+    flash(a);
 
-const n = () => {
-    let a = Math.floor(Math.random() * 4);
-    let b = color[a];
-    wow.push(b);
-    const c = document.getElementById(b);
-    c.style.backgroundColor = 'transparent';
     setTimeout(() => {
-        c.style.backgroundColor = '';
+        if(a.id === wow[i]) {
+            i++;
+            if(i === wow.length) {
+                level++;
+                score++;
+                abc.innerText = `Level ${level}`;
+                i = 0;
+                next();
+            }
+        } else {
+            document.querySelector('body').style.backgroundColor = 'red';
+            setTimeout(() => {
+                document.querySelector('body').style.backgroundColor = 'white';
+            },100)
+            abc.innerText = `Failed! Final Score = ${score}`;
+            wow = [];
+            level = 0;
+            i = 0;
+            score = 0;
+            pow = true;
+        }
     }, 100);
+});
+
+const next = () => {
+    let a = Math.floor(Math.random() * 4);
+    let c = color[a];
+    wow.push(c);
+    flash(document.getElementById(c));
 };
 
-document.addEventListener('keydown', (event) => {
-  abc.innerText = `Level 1`;
-  i = 1;
-  wow = [];
-  k = 0;
-  score = 0;
-  n();
-},{once: true});
+const flash = (a) => {
+    a.classList.add("flash");
+    setTimeout(() => a.classList.remove("flash"), 100);
+};
+
+document.addEventListener('keypress', () => {
+  if(pow) {
+    pow = false;
+    level = 1;
+    wow = [];
+    i = 0;
+    score = 0;
+    abc.innerText = `Level 1`;
+    next();
+  }
+});

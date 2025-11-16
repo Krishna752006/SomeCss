@@ -50,3 +50,7 @@ body {
 #blue {
   background-color: rgb(51, 183, 239);
 }
+
+.flash {
+  background-color: transparent !important;
+}
